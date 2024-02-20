@@ -38,7 +38,7 @@ public class EmailService {
     public void sendResetPasswordEmail(String to, String resetPasswordToken) {
         String subject = "Reset Password";
         String body = "Click the link below to reset your password:\n"
-                + "https://be-java-production.up.railway.app/api/auth/reset-password?token=" + resetPasswordToken;
+                + "https://be-java-master-production.up.railway.app/api/auth/reset-password?token=" + resetPasswordToken;
 
         sendAsync(to, subject, body);
     }

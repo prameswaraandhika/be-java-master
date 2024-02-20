@@ -54,7 +54,7 @@ public class AuthController {
     private Validator validator;
 
     @PostMapping("/register")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app/api", "https://be-java-production.up.railway.app", "http://localhost:3000"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app/api", "https://be-java-master-production.up.railway.app", "http://localhost:3000"})
     public ResponseEntity<Object> registerBasic(@RequestBody UsersDTO req) {
         validator.validate(req);
         try {
@@ -72,7 +72,7 @@ public class AuthController {
     }
 
     @PostMapping("/verifyOTP")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-production.up.railway.app"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-master-production.up.railway.app"})
     public ResponseEntity<Object> verifyOTP(@RequestParam String email, @io.swagger.v3.oas.annotations.parameters.RequestBody(
             content = @Content(
                     mediaType = "application/json",
@@ -100,7 +100,7 @@ public class AuthController {
     }
 
     @PostMapping("/resend")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-production.up.railway.app"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-master-production.up.railway.app"})
     public ResponseEntity<Object> resendOTP(@RequestParam String email) {
         try {
             String newOTP = usersService.resendOTPEmail(email);
@@ -116,7 +116,7 @@ public class AuthController {
 
     @Transactional
     @PostMapping("/setPassword")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-production.up.railway.app"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-master-production.up.railway.app"})
     public ResponseEntity<Object> setPassword(@RequestParam String email,  @io.swagger.v3.oas.annotations.parameters.RequestBody(
             content = @Content(
                     mediaType = "application/json",
@@ -141,7 +141,7 @@ public class AuthController {
     }
 
     @PostMapping("/reset-password-request")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-production.up.railway.app"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-master-production.up.railway.app"})
     public ResponseEntity<Object> requestResetPassword(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             content = @Content(
                     mediaType = "application/json",
@@ -158,7 +158,7 @@ public class AuthController {
     }
 
     @PostMapping("/reset-password")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-production.up.railway.app"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-master-production.up.railway.app"})
     public ResponseEntity<Object> resetPassword(@RequestParam String token, @io.swagger.v3.oas.annotations.parameters.RequestBody(
             content = @Content(
                     mediaType = "application/json",
@@ -178,7 +178,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-production.up.railway.app"})
+    @CrossOrigin(origins = {"http://be-java-production.up.railway.app", "https://be-java-master-production.up.railway.app"})
     public ResponseEntity<Object> authenticate(@RequestBody LoginRequest loginRequest){
         Authentication authentication = authenticationManager
                 .authenticate( new UsernamePasswordAuthenticationToken(

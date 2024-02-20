@@ -92,12 +92,12 @@ public class WebSecurityConfig {
     public CorsConfigurationSource corsConfiguration() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of(
-                "https://be-java-production.up.railway.app",
+                "https://be-java-master-production.up.railway.app",
                 "http://be-java-production.up.railway.app",
                 "http://localhost:8080",
                 "http://localhost:3000",
                 "http://localhost:5173",
-                "https://be-java-production.up.railway.app/api",
+                "https://be-java-master-production.up.railway.app/api",
                 "http://be-java-production.up.railway.app/api"
         ));
         configuration.setAllowedMethods(Arrays.asList(
