@@ -98,7 +98,8 @@ public class WebSecurityConfig {
                 "http://localhost:3000",
                 "http://localhost:5173",
                 "https://be-java-master-production.up.railway.app/api",
-                "http://be-java-production.up.railway.app/api"
+                "http://be-java-production.up.railway.app/api",
+                "https://fsw-web-user.netlify.app"
         ));
         configuration.setAllowedMethods(Arrays.asList(
                 "GET", "POST", "PUT", "DELETE"
